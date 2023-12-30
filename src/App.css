@@ -1,38 +1,574 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #be3b49;
+  --black: #000;
+  --white: #fff;
+  --grey: #aeaeae;
+  --text: rgb(117, 117, 117);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  background: #fff;
+}
+
+.left h2 {
+  color: var(--mainColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+.Navbar {
+  /* border-bottom: 1px solid var(--grey); */
+  box-shadow: 0 0 8px 3px var(--grey);
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+}
+
+.MobileNav ul {
+  display: none;
+  width: 0;
+  transition: width 2s;
+}
+
+.container {
+  padding: 20px 30px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  padding: 10px 15px;
+}
+
+ul li {
+  display: inline;
+  padding: 10px 15px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+ul li a {
+  color: var(--black);
+}
+
+.btn button {
+  margin: 0 0 0 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--grey);
+  color: var(--black);
+}
+
+.btn>*:last-child {
+  display: none;
+}
+
+.btn button#signin {
+  border: none;
+  background: var(--mainColor);
+  color: var(--white);
+}
+
+.about.container {
+  flex-direction: column;
+  margin-top: 90px;
+}
+
+.contact {
+  margin-top: 90px;
+}
+
+.contact h2,
+.about h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 42px;
+}
+
+.about .box {
+  width: 100%;
+  display: flex;
+  margin: 50px 0;
+}
+
+.about .left {
+  width: 50%;
+  padding: 50px 0;
+}
+
+.about .right {
+  width: 50%;
+}
+
+.about img {
+  width: 100%;
+}
+
+.about p {
+  width: 100%;
+  padding: 40px 0px;
+  font-size: 22px;
+  color: var(--text);
+}
+
+.about a {
+  color: var(--black);
+}
+
+.contact {
+  flex-direction: column;
+}
+
+.contact p {
+  padding: 10px 20px;
+  font-size: 26px;
+}
+
+form {
+  width: 800px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.contact form .grid {
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: auto auto;
+  margin-bottom: 20px;
+}
+
+.contact label {
+  width: 98%;
+  margin-right: 30px;
+}
+
+.contact form input {
+  width: 100%;
+  height: 36px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid var(--grey);
+}
+
+.contact form textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  margin: 5px 0 10px;
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid var(--grey);
+}
+
+.contact form input[type="submit"] {
+  background-color: var(--mainColor);
+  color: var(--white);
+  border: 1px solid var(--mainColor);
+  width: 300px;
+  margin: 0 auto;
+  display: block;
+  height: 40px;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.forgotpassword,
+.login {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.question-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.forgotpassword .box,
+.login .box {
+  width: 380px;
+  box-shadow: 0 0 8px 3px var(--grey);
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+form{
+  width: 100%;
+}
+form button{
+  width: 100%;
+}
+.forgotpassword h2,
+.login h2 {
+  text-align: center;
+  font-size: 26px;
+  margin: 20px 0 30px;
+}
+
+.forgotpassword label,
+.login label {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.forgotpassword label {
+  margin-top: 10px;
+}
+
+.forgotpassword input,
+.login input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+
+.forgotpassword button,
+.login button {
+  background-color: var(--mainColor);
+  height: 35px;
+  font-size: 22px;
+  color: var(--white);
+  padding: 5px 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--mainColor);
+}
+
+.forgotpassword p {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.login p {
+  text-align: center;
+  padding: 20px;
+}
+
+.login a {
+  display: block;
+  text-align: center;
+  color: var(--mainColor);
+  padding-bottom: 20px;
+}
+
+.Quiz {
+  padding: 30px 0;
+  text-align: center;
+  width: 1000px;
+  margin: 140px auto 30px auto;
+  box-shadow: 0 0 8px 3px var(--grey);
+}
+
+.Quiz h4 {
+  font-size: 26px;
+}
+
+.Quiz p {
+  font-size: 24px;
+  color: #202020;
+  padding: 20px;
+}
+
+.option {
+  box-shadow: 0 0 8px 3px var(--grey);
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.option button {
+  margin: 15px 0;
+  text-align: left;
+  padding: 10px;
+  border: 0;
+  border: 1px solid var(--mainColor);
+  font-size: 18px;
+}
+
+.option button:hover {
+  background-color: var(--mainColor);
+  color: var(--white);
+}
+
+form button ,.Quiz button#next {
+  margin-top: 30px;
+  width: 300px;
+  background-color: var(--white);
+  border: 2px solid var(--mainColor);
+  padding: 10px 0;
+  color: var(--mainColor);
+  font-size: 22px;
+}
+
+.quizcreate,
+.answer {
+  box-shadow: 0 0 8px 3px var(--grey);
+  width: 800px;
+  margin: 120px auto;
+  font-size: 26px;
+  border-radius: 5px;
+  padding: 20px 30px;
+}
+
+.answer h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.answer p {
+  font-size: 20px;
+}
+
+.answer p#right {
+  color: #49ce3d;
+}
+
+.answer p#wrong {
+  color: #f41414;
+}
+
+.answer p span {
+  width: 120px;
+  display: inline-block;
+  color: rgb(46, 46, 46);
+}
+
+.answer .subitems {
+  padding: 20px 0;
+}
+
+.quizcreate form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.quizcreate h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quizcreate label {
+  font-size: 20px;
+  margin-bottom: 3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.quizcreate input {
+  height: 30px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 5px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  margin-top: 120px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px 30px;
+}
+
+.home .right,
+.home .left {
+  width: 50%;
+}
+
+.home .left {
+  padding: 100px 20px;
+}
+
+.home .right img {
+  width: 100%;
+  height: 78vh;
+}
+
+.home .left h2 {
+  font-size: 48px;
+  color: var(--black);
+}
+
+.home .left p {
+  font-size: 18px;
+  padding: 20px 0;
+  color: var(--black);
+  color: #2b2b2b;
+}
+
+.home .left button {
+  margin-top: 30px;
+  padding: 15px 20px;
+  margin-right: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--mainColor);
+  color: #be3b49;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.NoPage {
+  margin-top: 100px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  height: 80vh;
 }
 
-.App-link {
-  color: #61dafb;
+.NoPage h2 {
+  font-size: 48px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.NoPage p {
+  font-size: 36px;
+  color: var(--grey);
+}
+
+@media screen and (max-width:1020px) {
+  .Quiz {
+    box-shadow: none;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .home .left {
+    padding: 25px 20px;
   }
 }
+
+@media screen and (max-width:850px) {
+  .contact form .grid {
+    grid-template-columns: auto;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  ul,
+  .btn button {
+    display: none;
+  }
+ 
+  .MobileNav ul {
+    display: flex;
+    width: 100%;
+    background-color: #be3b49;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .MobileNav ul li a{
+    color: #fff;
+    font-size: larger;
+  }
+  .btn>*:last-child {
+    display: block;
+  }
+
+  .about .box {
+    flex-direction: column;
+  }
+
+  .about .right {
+    order: -1;
+  }
+
+  .about .left,
+  .about .right {
+    width: 100%;
+  }
+
+  .about .left {
+    text-align: center;
+  }
+
+  .option {
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .Quiz p {
+    text-align: left;
+    padding: 5px 30px;
+  }
+
+  .home .left h2 {
+    font-size: 36px;
+  }
+
+  .home .left p {
+    font-size: 18px;
+  }
+
+  .quizcreate {
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width:660px) {
+
+  .forgotpassword .box,
+  .login .box {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+
+  .home .left h2 {
+    font-size: 28px;
+  }
+
+  .home .left,
+  .home .right {
+    width: 100%;
+  }
+
+  .home .right {
+    order: -1;
+  }
+}
+
+
+
+/* 
+List 
+*/
